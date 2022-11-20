@@ -1,0 +1,7 @@
+{
+  "name": "vc-weather",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
