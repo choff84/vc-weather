@@ -2,10 +2,16 @@
   padding-top: 10px;
 }
 
+
+.precipitationTitle{
+	font-size:larger;
+	padding: 5px;
+}
 .welcome{
 	text-align: center;
 	font-size: x-large;
 }
+
 
 .iphoneInstructions{
 	text-align: center;
@@ -24,7 +30,7 @@
 	position:relative;
 	padding-bottom: 56.25%;
 	height: 0;
-
+	
 }
 .latestVideo iframe{
 	position: absolute;
@@ -38,13 +44,13 @@
 	text-align: center;
 	font-size:large;
 }
-.currentTempCardCity{
+.valleyCity{
 text-align: center;
 font-size:x-large;
 }
-.currentTempCardTemperature{
+.currentTemperature{
   text-align: center;
-  font-size: 35pt;
+  font-size: 40pt;
 }
 .currentTempCardShortForecast{
 	text-align: center;
@@ -80,7 +86,9 @@ ion-modal ion-content {
 .scrolling-wrapper-flexbox {
 	display: flex;
 	flex-wrap: nowrap;
-	overflow-x: auto;
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-x: scroll; 
   
 	.card {
 	  flex: 0 0 auto;
@@ -88,3 +96,36 @@ ion-modal ion-content {
 	  padding-right: 5pt;
 	}
   }
+  .scrolling-wrapper-flexbox::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+
+  .cardTest {
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 5px;
+	margin-left:5px;
+	margin-right:5px;
+	
+  }
+
+
+  /* Add some padding inside the card container */
+  .container {
+	padding: 10px;
+  }  
+
+  .futurePrecipitation{
+	padding-left:5px;
+  }
+  .futurePrecipitationTop{
+	padding-left:5px;
+	padding-top:15px;
+  }
+
+  .cardTitle{
+	font-size: 19px;;
+  }
+
+  

@@ -1,20 +1,29 @@
-<ion-header>
+
+
+
+<app-tabs></app-tabs>
+
+
+
+
+<!--<ion-header>
+
+
+
   <ion-toolbar>
     <ion-title>VC Weather</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-header collapse="condense">
+<ion-content [fullscreen]="true" class="ion-padding" color="blue">
+ <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">VC Weather</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header>-->
  
-  
-  <div>
-  <ion-card color="blue">
+  <!--<ion-card color="light">
   <ion-card-header>
     <ion-card-subtitle>
       FEATURING
@@ -24,44 +33,56 @@
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-   <div class="currentTempCardCity"><ion-label>Valley City</ion-label></div>
-   <div class ="currentTempCardTemperature"><ion-label>{{currentForecast?.temperature}}°F</ion-label></div> 
-  
-  
+   <div class="valleyCity"><ion-label>Valley City</ion-label></div>
+   <div class ="currentTemperature"><ion-label>{{currentForecast?.temperature}}°F</ion-label></div> 
+   <div class="precipitationTitle">Precipitation</div>
+   <div class="cardTest"><div class="container">
+ <div class="scrolling-wrapper-flexbox">
+  <div class="card" *ngFor="let precipitation of probabilityPrecipForecast"><div>8PM</div><div>{{precipitation.value}}%</div></div>
+  </div></div></div>    
+  <div class="futurePrecipitationTop">24 hour precipitation: 0.225 in</div>
+  <div class="futurePrecipitation">7 day precipitation: 0.225 in</div>
    
-    <ion-card-subtitle>Hourly Precipitation</ion-card-subtitle>
-    <div class="scrolling-wrapper-flexbox">
-      
-        <div class="card" *ngFor="let precipitation of probabilityPrecipForecast"><div>{{precipitation.validTime}}</div><div>{{precipitation.value}}%</div></div>
-       
-    </div>
 
-    <ion-label>Precpitation in next 24 hours: </ion-label>
+    
   </ion-card-content>
   </ion-card>
-  </div>
   
-  <ion-card>
+  
+  <ion-card color="light">
     <ion-card-header>
-      <ion-card-subtitle>
-        Check out Carter's latest video
-      </ion-card-subtitle>
+     <div class="cardTitle">Carter's forecast</div>
+    </ion-card-header>
+  <ion-card-content>
+    Rain showers tonight...
+  </ion-card-content>
+  </ion-card>
+
+  
+  <ion-card color="light">
+    <ion-card-header>
+     <div class="cardTitle">Check out Carter's latest video</div>
     </ion-card-header>
   <div class="latestVideo">
-<!--<iframe
+<iframe
   src="https://www.youtube.com/embed?listType=playlist&list=UU13YytrqEn3lO3iZ8RI2TPA" frameborder="0" allowfullscreen>
-</iframe> -->
+</iframe>
 </div>
   </ion-card>
 
-  <ion-card color="dark">
-   <ion-card-content>
-    <div class="jokeTitle">Today's Weather Joke</div>
+  <ion-card color="light">
+   <ion-card-header>
+    <div class="cardTitle">Today's weather joke</div>
+   </ion-card-header>
+    <ion-card-content>
     <div>{{currentJokeQuestion}}</div>
     <div *ngIf="showJoke">{{currentJokeAnswer}}</div>
-    <ion-button fill="outline" color="light" size="small" (click)="toggleJoke()">{{showJoke ? "Hide": "Show"}}</ion-button>
+    <ion-button fill="outline" color="dark" size="small" (click)="toggleJoke()">{{showJoke ? "Hide": "Show"}}</ion-button>
    </ion-card-content>
   </ion-card>
+
+  <app-precipitation-list></app-precipitation-list>
+
 
 <ion-card color={{cardColor}}>
   <ion-card-content>
@@ -72,7 +93,10 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-input enterkeyhint="Try it"  type="number" inputmode="numeric" id="testInput" placeholder="0°F" #temp></ion-input>
+          <ion-input 
+          type="number" inputmode="numeric" 
+          id="testInput" placeholder="0°F"
+           #temp></ion-input>
         </ion-col>
         <ion-col>
           <ion-button size='small' (click)="submitTemp(temp.value)">Try it</ion-button>
@@ -87,28 +111,28 @@
   </ion-card-content>
 </ion-card>
 
-<ion-card>
-  
-  <ion-card-content>
-    <div class="jokeTitle">About</div>
-    <ion-label>
-      This app was made strictly for fun and should not be...
-    </ion-label>
-    <div><ion-label>Made by Colin H</ion-label></div>
-  </ion-card-content>
-
-</ion-card>
-<ion-card>
+<ion-card color="light">
+  <ion-card-header>
+   <div class="cardTitle">Contact us</div>
+  </ion-card-header>
 <ion-card-content>
-  <div class="jokeTitle">Contact Us</div>
-  <ion-label>
-   We value customer feedback and suggestions. Feel free to reach out to us using these contact methods.
-  </ion-label>
-  
+  We value customer feedback and suggestions. Feel free to reach out to us using these contact methods.
+</ion-card-content>
+</ion-card>
+
+<ion-card color="light">
+  <ion-card-header>
+   <div class="cardTitle">About</div>
+  </ion-card-header>
+<ion-card-content>
+  This app was made strictly for fun...
+  Made by Colin H
 </ion-card-content>
 </ion-card>
 
 </ion-content>
+
+
 <ion-modal trigger="open-modal" [canDismiss]="canDismiss" [initialBreakpoint]="0.6" [breakpoints]="[0, 0.6]">
   <ng-template>
     <ion-header>
@@ -138,4 +162,4 @@
 
     </ion-content>
   </ng-template>
-</ion-modal>
+</ion-modal>-->

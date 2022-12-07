@@ -1,0 +1,24 @@
+.precipScroll {
+	padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 5px;
+}  
+.scrolling-wrapper-flexbox {
+	display: flex;
+	flex-wrap: nowrap;
+	-ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-x: scroll; 
+}
+.scrolling-wrapper-flexbox::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+.precipScrollCard {
+    flex: 0 0 auto;
+    padding-left: 5pt;
+    padding-right: 5pt;
+}
+.futurePrecip{
+    padding-top:10px;
+    font-size: x-large;
+}

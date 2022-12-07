@@ -24,8 +24,12 @@ export class HomePage {
   currentJokeAnswer!: string;
   isAndroid: boolean = false;
   showMore: boolean = false;
-  currentForecast!: HourlyForecastModel;
+  
+  
+  currentForecast: HourlyForecastModel | null = null;
   probabilityPrecipForecast!: PrecipForecastModel[];
+
+
   quantitativePrecipForecast!: PrecipForecastModel;
   guessCityName = "Cupertino, CA"
   message!:string;
@@ -46,7 +50,7 @@ export class HomePage {
     
    
      
-     submitTemp(temp:string | number | null | undefined){
+     submitTemp(temp:any){
        
        if (temp == 70){
          this.cardColor = "success"
@@ -101,7 +105,7 @@ export class HomePage {
          null
        }
        else{
-         this.openModal()
+        // this.openModal()
        }
    
        if (this.platform.is("android")){
