@@ -24,6 +24,8 @@ export class HomePage {
   currentJokeAnswer!: string;
   isAndroid: boolean = false;
   showMore: boolean = false;
+
+  imageUrl: string = "./assets/Partly Cloudy.png";
   
   
   currentForecast: HourlyForecastModel | null = null;

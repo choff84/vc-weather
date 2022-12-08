@@ -128,4 +128,57 @@ ion-modal ion-content {
 	font-size: 19px;;
   }
 
-  
+  .iconTest {
+
+	transition: all 0.3s;
+	margin:auto;
+	width:200px;
+	height:200px;
+	}
+	
+	.iconTest:hover {
+	transform: scale(0.95);
+	}
+
+
+	.city{
+		text-align: center;
+		text-shadow: 1px 0 40px black;
+		font-size:30pt;
+		
+	}
+
+	
+
+	.currentCondition{
+		text-align: center;
+		font-size: 25px;
+		text-shadow: 1px 0 40px black;
+
+	}
+
+	.currentTemperature{
+		text-align: center;
+		font-size: 85px;
+		text-shadow: 1px 0 40px black;
+	}
+
+	.currentChancePrecip{
+		text-align: center;
+		font-size: 25px;
+		text-shadow: 1px 0 40px black;
+		margin-bottom:10px;
+	}
+
+	.ion-no-margin{
+		margin-left:16px;
+		margin-right:16px;
+		margin-bottom:16px;
+	}
+
+	.cardTitleOutside{
+		font-size:larger;
+		margin-left:16px;
+		margin-top:16px;
+		margin-bottom: 5px;
+	}

@@ -1,165 +1,82 @@
 
-
-
-<app-tabs></app-tabs>
-
-
-
-
-<!--<ion-header>
-
-
-
-  <ion-toolbar>
-    <ion-title>VC Weather</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-
-<ion-content [fullscreen]="true" class="ion-padding" color="blue">
- <ion-header collapse="condense">
+<ion-content [fullscreen]="true">
+  
+  <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">VC Weather</ion-title>
     </ion-toolbar>
-  </ion-header>-->
- 
-  <!--<ion-card color="light">
-  <ion-card-header>
-    <ion-card-subtitle>
-      FEATURING
-    </ion-card-subtitle>
-    <ion-card-title>
-      EF5 Weather
-    </ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-   <div class="valleyCity"><ion-label>Valley City</ion-label></div>
-   <div class ="currentTemperature"><ion-label>{{currentForecast?.temperature}}°F</ion-label></div> 
-   <div class="precipitationTitle">Precipitation</div>
-   <div class="cardTest"><div class="container">
- <div class="scrolling-wrapper-flexbox">
-  <div class="card" *ngFor="let precipitation of probabilityPrecipForecast"><div>8PM</div><div>{{precipitation.value}}%</div></div>
-  </div></div></div>    
-  <div class="futurePrecipitationTop">24 hour precipitation: 0.225 in</div>
-  <div class="futurePrecipitation">7 day precipitation: 0.225 in</div>
-   
+  </ion-header>
 
-    
-  </ion-card-content>
-  </ion-card>
-  
-  
-  <ion-card color="light">
-    <ion-card-header>
-     <div class="cardTitle">Carter's forecast</div>
-    </ion-card-header>
-  <ion-card-content>
-    Rain showers tonight...
-  </ion-card-content>
+  <ion-card color="primary" class="ion-no-margin">  
+      <ion-card-content>
+
+    <div class="city">Valley City</div>
+    <div class="iconTest"><img src="./assets/test.png"></div>
+    <div class="currentCondition">{{currentForecast?.shortForecast}}</div>
+    <div class="currentTemperature">{{currentForecast?.temperature}}°</div>
+      <div class="currentChancePrecip"><ion-icon name="umbrella-outline"></ion-icon> 30%</div>
+    </ion-card-content>
   </ion-card>
 
-  
-  <ion-card color="light">
-    <ion-card-header>
-     <div class="cardTitle">Check out Carter's latest video</div>
-    </ion-card-header>
-  <div class="latestVideo">
-<iframe
-  src="https://www.youtube.com/embed?listType=playlist&list=UU13YytrqEn3lO3iZ8RI2TPA" frameborder="0" allowfullscreen>
-</iframe>
-</div>
-  </ion-card>
-
-  <ion-card color="light">
-   <ion-card-header>
-    <div class="cardTitle">Today's weather joke</div>
-   </ion-card-header>
-    <ion-card-content>
-    <div>{{currentJokeQuestion}}</div>
-    <div *ngIf="showJoke">{{currentJokeAnswer}}</div>
-    <ion-button fill="outline" color="dark" size="small" (click)="toggleJoke()">{{showJoke ? "Hide": "Show"}}</ion-button>
-   </ion-card-content>
-  </ion-card>
 
   <app-precipitation-list></app-precipitation-list>
+   <div class="cardTitleOutside">Forecast from NWS</div>
 
-
-<ion-card color={{cardColor}}>
-  <ion-card-content>
-    <div class="jokeTitle">Guess the temperature in...</div>
-   
-    <ion-label>{{guessCityName}}</ion-label>
-    
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-input 
-          type="number" inputmode="numeric" 
-          id="testInput" placeholder="0°F"
-           #temp></ion-input>
-        </ion-col>
-        <ion-col>
-          <ion-button size='small' (click)="submitTemp(temp.value)">Try it</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-   
-    
-   
-     
-   
-  </ion-card-content>
-</ion-card>
-
-<ion-card color="light">
-  <ion-card-header>
-   <div class="cardTitle">Contact us</div>
-  </ion-card-header>
+   <ion-card class="ion-no-margin" color="primary">
 <ion-card-content>
-  We value customer feedback and suggestions. Feel free to reach out to us using these contact methods.
+ 
+  A chance of snow. Mostly cloudy, with a high near 22. Northwest wind 14 to 18 mph, with gusts as high as 24 mph. Chance of precipitation is 30%.
 </ion-card-content>
-</ion-card>
+  </ion-card>
 
-<ion-card color="light">
-  <ion-card-header>
-   <div class="cardTitle">About</div>
-  </ion-card-header>
-<ion-card-content>
-  This app was made strictly for fun...
-  Made by Colin H
-</ion-card-content>
-</ion-card>
+  <div class="cardTitleOutside">More weather data</div>
+  <ion-list [inset]="true">
+    
+    <ion-item color="primary">
+      <ion-label>High</ion-label>
+      <ion-label slot="end">60°F</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Low</ion-label>
+      <ion-label slot="end">60°F</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>24hr Precipitation</ion-label>
+      <ion-label slot="end">0.025″</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>7d Precipitation</ion-label>
+      <ion-label slot="end">0.025″</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Relative humidity</ion-label>
+      <ion-label slot="end">60%</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Apparent temperature</ion-label>
+      <ion-label slot="end">60°F</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Dew point</ion-label>
+      <ion-label slot="end">60°F</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Wind chill</ion-label>
+      <ion-label slot="end">60°F</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Wind direction</ion-label>
+      <ion-label slot="end">N</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Wind speed</ion-label>
+      <ion-label slot="end">6 mph</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label>Ice accumulation</ion-label>
+      <ion-label slot="end">6 mm</ion-label>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>
-
-
-<ion-modal trigger="open-modal" [canDismiss]="canDismiss" [initialBreakpoint]="0.6" [breakpoints]="[0, 0.6]">
-  <ng-template>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="end">
-          <ion-button (click)="dismiss()" [strong]="true">Done</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header> 
-    <ion-content [fullscreen]="true" class="ion-padding">
-
-      <div class="welcome"><ion-label>Welcome to VC Weather!</ion-label></div>
-    <div class="welcome"><img src="./assets/modallogo.png" height="100"></div>
-    
-
-    <div *ngIf="!canDismiss"><div class="welcomeSubtitle"><ion-label>To download, please </ion-label></div><div class="welcomeSubtitle"><ion-button (click)="presentTerms()" color="light">accept the terms and conditions</ion-button></div></div>
-    
-    <div *ngIf="canDismiss">
-    <div class="welcomeSubtitle"><ion-label>Here's how to download:</ion-label></div>
-    <div *ngIf="!isAndroid" class="iphoneInstructions">
-    <div>Tap the share button <ion-icon name="share-outline"></ion-icon></div>
-    <div class="addToHomescreen">Scroll down and press</div>
-    <div>Add to Home Screen <img src="./assets/addtohomescreen.png" width="20" height="20"></div>
-    </div>
-    </div>
-    <div *ngIf="isAndroid">Android</div>
-
-    </ion-content>
-  </ng-template>
-</ion-modal>-->
