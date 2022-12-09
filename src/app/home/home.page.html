@@ -1,11 +1,13 @@
+<ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">VC Weather</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 
 <ion-content [fullscreen]="true">
   
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">VC Weather</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
 
   <ion-card color="primary" class="ion-no-margin">  
       <ion-card-content>
@@ -14,13 +16,15 @@
     <div class="iconTest"><img src="./assets/test.png"></div>
     <div class="currentCondition">{{currentForecast?.shortForecast}}</div>
     <div class="currentTemperature">{{currentForecast?.temperature}}°</div>
-      <div class="currentChancePrecip"><ion-icon name="umbrella-outline"></ion-icon> 30%</div>
+      <div class="currentChancePrecip"><ion-icon
+        style="vertical-align: text-top;"
+        name="umbrella-outline"></ion-icon> 30%</div>
     </ion-card-content>
   </ion-card>
 
-
+<app-blizzard></app-blizzard>
   <app-precipitation-list></app-precipitation-list>
-   <div class="cardTitleOutside">Forecast from NWS</div>
+   <div class="cardTitleOutside">Daily Summary</div><div class="cardSubtitleOutside"> by Weather.gov</div>
 
    <ion-card class="ion-no-margin" color="primary">
 <ion-card-content>

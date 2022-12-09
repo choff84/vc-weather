@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { PrecipitationListComponent } from './precipitation-list/precipitation-list.component';
+import { BlizzardComponent } from './blizzard/blizzard.component';
 
 
 
@@ -16,6 +17,6 @@ import { PrecipitationListComponent } from './precipitation-list/precipitation-l
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, PrecipitationListComponent]
+  declarations: [HomePage, PrecipitationListComponent, BlizzardComponent]
 })
 export class HomePageModule {}
