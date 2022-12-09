@@ -1,8 +1,8 @@
 {
   "name": "VC Weather",
   "short_name": "VC Weather",
-  "theme_color": "#0000FF",
-  "background_color": "#0000FF",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

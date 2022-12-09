@@ -1,87 +1,3 @@
-.title{
-  padding-top: 10px;
-}
-
-
-.precipitationTitle{
-	font-size:larger;
-	padding: 5px;
-}
-.welcome{
-	text-align: center;
-	font-size: x-large;
-}
-
-
-.iphoneInstructions{
-	text-align: center;
-	padding-top: 20px;
-	font-size:large;
-}
-
-.addToHomescreen{
-	padding-top:15px;
-}
-
-.jokeTitle{
-	font-size: larger;
-}
-.latestVideo{
-	position:relative;
-	padding-bottom: 56.25%;
-	height: 0;
-	
-}
-.latestVideo iframe{
-	position: absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-}
-
-.welcomeSubtitle{
-	text-align: center;
-	font-size:large;
-}
-.valleyCity{
-text-align: center;
-font-size:x-large;
-}
-.currentTemperature{
-  text-align: center;
-  font-size: 40pt;
-}
-.currentTempCardShortForecast{
-	text-align: center;
-	padding-bottom: 20px;
-}
-
-
-
-ion-modal ion-content {
-	--background: blue;
-	--color: white;
-}
-
-
-:root {
-	--ion-color-blue: #0000ff;
-	--ion-color-blue-rgb: 0,0,255;
-	--ion-color-blue-contrast: #ffffff;
-	--ion-color-blue-contrast-rgb: 255,255,255;
-	--ion-color-blue-shade: #0000e0;
-	--ion-color-blue-tint: #1a1aff;
-}
-
-.ion-color-blue {
-	--ion-color-base: var(--ion-color-blue);
-	--ion-color-base-rgb: var(--ion-color-blue-rgb);
-	--ion-color-contrast: var(--ion-color-blue-contrast);
-	--ion-color-contrast-rgb: var(--ion-color-blue-contrast-rgb);
-	--ion-color-shade: var(--ion-color-blue-shade);
-	--ion-color-tint: var(--ion-color-blue-tint);
-}
 
 .scrolling-wrapper-flexbox {
 	display: flex;
@@ -101,54 +17,20 @@ ion-modal ion-content {
 }
 
 
-  .cardTest {
-	/* Add shadows to create the "card" effect */
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	border-radius: 5px;
-	margin-left:5px;
-	margin-right:5px;
-	
-  }
 
-
-  /* Add some padding inside the card container */
-  .container {
-	padding: 10px;
-  }  
-
-  .futurePrecipitation{
-	padding-left:5px;
-  }
-  .futurePrecipitationTop{
-	padding-left:5px;
-	padding-top:15px;
-  }
-
-  .cardTitle{
-	font-size: 19px;;
-  }
-
-  .iconTest {
+  .currentIcon {
 
 	transition: all 0.3s;
 	margin:auto;
 	width:200px;
 	height:200px;
+
 	}
 	
-	.iconTest:hover {
+	.currentIcon:hover {
 	transform: scale(0.95);
 	}
 
-
-	.city{
-		text-align: center;
-		text-shadow: 1px 0 40px black;
-		font-size:30pt;
-		
-	}
-
-	
 
 	.currentCondition{
 		text-align: center;
