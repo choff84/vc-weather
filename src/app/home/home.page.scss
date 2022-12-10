@@ -1,3 +1,18 @@
+.welcomeTitle{
+	text-align: center;
+	font-size: 35pt;
+	margin:20px;
+	margin-top:50px;
+}
+.welcomeIcon{
+ width: 125px;
+ margin:10px;
+ border-top-left-radius: 25px;
+ border-top-right-radius: 25px;
+ border-bottom-left-radius: 25px;
+ border-bottom-right-radius: 25px;
+}
+
 
 .scrolling-wrapper-flexbox {
 	display: flex;
@@ -52,3 +67,24 @@
 		margin-bottom:10px;
 	}
 
+@media(prefers-color-scheme: light){
+	.testcontent{
+		--background: white;
+	}
+}
+@media(prefers-color-scheme: dark){
+	.testcontent{
+		--background: black;
+	}
+}
+
+.termsTitle{
+	margin:20px;
+	font-size:17pt;
+}
+.termsContent{
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-right:20px;
+	font-size:12pt;
+}

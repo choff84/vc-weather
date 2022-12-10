@@ -16,17 +16,14 @@ import { ToastController } from "@ionic/angular"
 })
 export class HomePage {
 
-  jokesQuestions = ["How do hurricanes see?","What did one lightning bolt say to the other?","What's the difference between weather and climate?", "When are your eyes not eyes?", "I heard Humpty Dumpty had a great summer...", "Why is the sun so smart?", "Where do snowmen keep their money?"]
-  jokesAnswers = ["With one eye!", "You're shocking!", "You can't weather a tree, but you can climate.", "when the cold wind makes them water!", "But he had a horrible fall.", "It has over 5,000 degrees.", "In a snow bank."]
-  
-  showJoke: boolean = false;
-  currentJokeQuestion!: string;
-  currentJokeAnswer!: string;
+  canContinue: boolean = false;
+  showInstructions: boolean = false;
+showTerms: boolean = true;
   isAndroid: boolean = false;
   showMore: boolean = false;
 
   imageUrl: string = "./assets/Partly Cloudy.png";
-  
+  isChecked=false;
   
   currentForecast: HourlyForecastModel | null = null;
   probabilityPrecipForecast!: PrecipForecastModel[];
@@ -44,7 +41,7 @@ export class HomePage {
 
   ngOnInit() {
     this.checkPlatform()
-      this.getJoke()
+      
    
       this.callApi()
       this.callPrecipApi()
@@ -98,16 +95,14 @@ export class HomePage {
         })
      }
    
-     getJoke(){
-       this.currentJokeQuestion = this.jokesQuestions[this.dayMod]
-       this.currentJokeAnswer = this.jokesAnswers[this.dayMod]
-     }
+    
+     
      checkPlatform(){
        if (this.platform.is("pwa")){
          null
        }
        else{
-        // this.openModal()
+         this.openModal()
        }
    
        if (this.platform.is("android")){
@@ -115,10 +110,7 @@ export class HomePage {
        }
      }
      
-     toggleJoke(){
-       this.showJoke = !this.showJoke
-     }
-    
+   
      async openModal() {
        await this.modalCtrl.create({
          component: 'ForecastComponent'
@@ -135,12 +127,7 @@ export class HomePage {
      };
      
      
-   now: any = new Date();
-   start: any = new Date(this.now.getFullYear(), 0, 0)
-   diff = (this.now - this.start) + ((this.start.getTimezoneOffset() - this.now.getTimezoneOffset()) * 60 * 1000)
-   oneDay = 1000 * 60 *60 * 24
-   day = Math.floor(this.diff / this.oneDay)
-   dayMod = this.day % this.jokesQuestions.length
+   
     
    
    @ViewChild(IonModal)
@@ -192,5 +179,22 @@ export class HomePage {
    }
    
 
+
+
+   checkboxClick(e:any){
+    if (this.isChecked){
+      this.canContinue = true;
+    }
+    else{
+      this.canContinue = false;
+    }
+  }
+
+
+  termsContinue(){
+   this.showInstructions = true;
+   this.canContinue=false;
+   this.showTerms = false;
+  }
 
 }

@@ -32,3 +32,34 @@
 -->
 
 </ion-content>
+
+
+<ion-modal trigger="open-modal">
+  <ng-template>
+    <ion-content class="testcontent">
+      <div class="welcomeTitle">
+        VC Weather
+        <div><img src="assets/icons/icon-1024x1024.png" class="welcomeIcon"></div>
+      </div>
+
+      <div *ngIf="showTerms">
+      <div class="termsTitle">
+        Please read and agree to the terms and conditions below:
+      </div>
+      <div class="termsContent">Terms and conditions go here please replace this text.</div>
+      <ion-item lines="none">
+        <ion-checkbox slot="start" value="1" [(ngModel)]="isChecked" (ionChange)="checkboxClick($event)"></ion-checkbox>
+        <ion-label>I agree to the terms and conditions</ion-label>
+      </ion-item>
+      </div>
+
+      <div *ngIf="showInstructions">test</div>
+      <ion-fab *ngIf="canContinue" slot="fixed" vertical="bottom" horizontal="center" style="margin-bottom:10px;">
+        <ion-fab-button (click)="termsContinue()">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>
