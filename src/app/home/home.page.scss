@@ -1,3 +1,14 @@
+
+ion-content {
+	// overwrite inline styles
+	--offset-bottom: auto!important;
+	--overflow: hidden;
+	overflow: auto;
+	&::-webkit-scrollbar {
+	  display: none;
+	}
+  }
+
 .welcomeTitle{
 	text-align: center;
 	font-size: 35pt;
@@ -13,40 +24,19 @@
  border-bottom-right-radius: 25px;
 }
 
-
-.scrolling-wrapper-flexbox {
-	display: flex;
-	flex-wrap: nowrap;
-	-ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
-    overflow-x: scroll; 
-  
-	.card {
-	  flex: 0 0 auto;
-	  padding-left: 5pt;
-	  padding-right: 5pt;
-	}
+ion-chip {
+	--color: white;
   }
-  .scrolling-wrapper-flexbox::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
 
 
 
-  .currentIcon {
 
-	transition: all 0.3s;
-	margin:auto;
-	width:200px;
-	height:200px;
-
-	}
+ .weathericon{
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
 	
-	.currentIcon:hover {
-	transform: scale(0.95);
-	}
-
-
+ }
 	.currentCondition{
 		text-align: center;
 		font-size: 25px;
@@ -60,12 +50,8 @@
 		text-shadow: 1px 0 40px black;
 	}
 
-	.currentChancePrecip{
-		text-align: center;
-		font-size: 25px;
-		text-shadow: 1px 0 40px black;
-		margin-bottom:10px;
-	}
+	
+
 
 @media(prefers-color-scheme: light){
 	.testcontent{
@@ -87,4 +73,27 @@
 	margin-bottom: 20px;
 	margin-right:20px;
 	font-size:12pt;
+}
+
+
+
+
+.windIcon{
+	width:20px;
+	height:20px;
+	margin-right:10px;
+}
+
+.skeletonShortForecast{
+	width:60%;
+	margin: auto;
+	height:25px;
+}
+
+.skeletonTemperature{
+	width:35%;
+	margin: auto;
+	height:50px;
+	margin-top:20px;
+	margin-bottom: 20px;
 }

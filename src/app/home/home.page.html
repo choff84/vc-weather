@@ -4,33 +4,53 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
 
+  <div *ngIf="simpleWeatherLoaded">
   <ion-card color="primary" class="ion-no-margin">  
     <ion-card-content>
-    <div class="currentIcon"><img src="./assets/test.png"></div>
+    <img src='{{iconUrl}}' class="weathericon">
     <div class="currentCondition">{{currentForecast?.shortForecast}}</div>
     <div class="currentTemperature">{{currentForecast?.temperature}}°</div>
-      <div class="currentChancePrecip"><ion-icon
-        style="vertical-align: text-top;"
-        name="umbrella-outline"></ion-icon> 30%</div>
+    
+    <div style="text-align:center;">
+    <ion-chip id="precipitation-trigger">
+      <ion-icon name="umbrella" style="color:white"></ion-icon>
+      <ion-label style="font-size: x-large;">30%</ion-label>
+    </ion-chip>
+    <ion-popover trigger="precipitation-trigger" triggerAction="click">
+      <ng-template>
+        <ion-content class="ion-padding">There is a 30% chance of precipitation.</ion-content>
+      </ng-template>
+    </ion-popover>
+    <ion-chip id="wind-trigger">
+      <img src="./assets/icons/windSmall.png" class="windIcon">
+      <ion-label style="font-size: x-large;">{{currentForecast?.windSpeed}} {{currentForecast?.windDirection}}</ion-label>
+    </ion-chip>
+    <ion-popover trigger="wind-trigger" triggerAction="click">
+      <ng-template>
+        <ion-content class="ion-padding">The wind is {{currentForecast?.windSpeed}} {{currentForecast?.windDirection}}</ion-content>
+      </ng-template>
+    </ion-popover>
+    </div>
     </ion-card-content>
   </ion-card>
+  </div>
+
+  <div *ngIf="!simpleWeatherLoaded">
+    <ion-card color="primary" class="ion-no-margin">  
+      <ion-card-content>
+      <div class="currentCondition"><ion-skeleton-text [animated]="true" class="skeletonShortForecast"></ion-skeleton-text></div>
+      <div class="currentTemperature"><ion-skeleton-text [animated]="true" class="skeletonTemperature"></ion-skeleton-text></div>
+      <ion-skeleton-text [animated]="true" class="skeletonShortForecast"></ion-skeleton-text>
+      </ion-card-content>
+    </ion-card>
+    </div>
 
   <app-blizzard></app-blizzard>
   <app-precipitation-list></app-precipitation-list>
    
-  
-  <!--<div class="cardTitleOutside">Daily Summary</div><div class="cardSubtitleOutside"> by Weather.gov</div>
-
-   <ion-card class="ion-no-margin" color="primary">
-<ion-card-content>
- 
-  A chance of snow. Mostly cloudy, with a high near 22. Northwest wind 14 to 18 mph, with gusts as high as 24 mph. Chance of precipitation is 30%.
-</ion-card-content>
-  </ion-card>
--->
-
 </ion-content>
 
 

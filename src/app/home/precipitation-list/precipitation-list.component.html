@@ -1,19 +1,9 @@
-<ion-card color="primary">
+<div class="cardTitleOutside">Precipitation</div> <div class="cardSubtitleOutside"></div>
+
+<ion-card class="ion-no-margin" color="primary">
   <ion-card-content>
-   <div class="precipScroll">
-      <div class="scrolling-wrapper-flexbox">
-        <div class="precipScrollCard" *ngFor="let precipitation of precipitationList"><div>{{precipitation.validTime | date:'ha'}}</div><div>30%</div></div>
-      </div>
+    <div class="scrolling-wrapper-flexbox">
+      <div class="precipScrollCard" *ngFor="let precipitation of precipitationList"><div>{{precipitation.validTime | date:'ha'}}</div><div></div><div>30%</div></div>
     </div>
-    
   </ion-card-content>
 </ion-card>
-
-
-
-<ion-list [inset]="true">
-  <ion-item color="primary">
-    <ion-label>7d Precipitation</ion-label>
-    <ion-label slot="end">0.025″</ion-label>
-  </ion-item>
-</ion-list>
